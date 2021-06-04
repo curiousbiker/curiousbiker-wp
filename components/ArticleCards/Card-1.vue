@@ -3,14 +3,18 @@
     <div
       class=" overflow-hidden rounded-md shadow hover:shadow-xl transition duration-300"
     >
-      <a href="#">
+      <nuxt-link :to="article.slug">
         <img :src="thumbnail" :alt="article.title.rendered" class=" w-full" />
-      </a>
+      </nuxt-link>
     </div>
     <div class=" mt-4">
-      <a href="#" class=" text-lg block text-dark font-KohinoorBangla">
+      <nuxt-link
+        :to="article.slug"
+        class=" text-lg block text-dark font-KohinoorBangla"
+      >
         {{ article.title.rendered }}
-      </a>
+      </nuxt-link>
+
       <time class=" text-gray-500 text-base block">
         {{ $moment(article.date).format("LLLL") }}
       </time>

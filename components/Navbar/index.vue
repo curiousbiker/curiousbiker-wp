@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
     <div class="navbar">
-      <a href="#" class="navbar__logo">
+      <nuxt-link to="/" class="navbar__logo">
         Curious Biker
-      </a>
+      </nuxt-link>
 
       <div class="navbar__search">
         <input

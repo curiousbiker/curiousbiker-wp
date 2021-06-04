@@ -1,6 +1,7 @@
 <template>
-  <div class=" wrapper">
+  <div class="wrapper" v-if="!$fetchState.pending">
     <sections-featureds :resources="featureds" />
+
     <div class=" grid grid-cols-12 gap-10">
       <div class="col-span-8">
         <div class=" my-10">
@@ -25,6 +26,9 @@
         </h1>
       </div>
     </div>
+  </div>
+  <div v-else>
+    <h1 class="text-5xl">Loading</h1>
   </div>
 </template>
 

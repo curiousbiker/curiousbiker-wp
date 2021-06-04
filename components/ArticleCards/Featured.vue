@@ -4,9 +4,12 @@
       <img :src="thumbnail" :alt="article.title.rendered" class=" w-full" />
     </div>
     <div class="col-span-2 flex flex-col justify-center">
-      <a class=" text-3xl block text-dark font-HindSiliguri font-bold">
+      <nuxt-link
+        :to="article.slug"
+        class=" text-3xl block text-dark font-HindSiliguri font-bold"
+      >
         {{ article.title.rendered }}
-      </a>
+      </nuxt-link>
 
       <time class=" text-gray-500 text-xl my-6 block">
         {{ $moment(article.date).format("LLLL") }}
@@ -17,8 +20,8 @@
         v-html="article.excerpt.rendered.slice(0, 120) + '...'"
       ></div>
 
-      <a
-        href="#"
+      <nuxt-link
+        :to="article.slug"
         class=" mt-10 text-primary items-center text-xl flex space-x-3"
       >
         <span>বিস্তারিত পড়ুন</span>
@@ -34,7 +37,7 @@
             clip-rule="evenodd"
           />
         </svg>
-      </a>
+      </nuxt-link>
     </div>
   </div>
 </template>
