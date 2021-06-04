@@ -28,7 +28,13 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    ['@nuxtjs/moment', {
+      defaultLocale: 'bn',
+      locales: ['bn']
+    }]
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -37,7 +43,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.NUXT_ENV_API
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

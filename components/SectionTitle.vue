@@ -2,7 +2,7 @@
   <div
     class=" border-b border-gray-300 pb-2 mb-5 flex items-center justify-between"
   >
-    <h2 class=" text-2xl text-dark ">করোনাভাইরাস</h2>
+    <h2 class=" text-2xl text-dark">{{ title }}</h2>
 
     <a href="#" class=" text-primary items-center text-base flex space-x-2">
       <span>আরও পড়ুন</span>
@@ -21,3 +21,8 @@
     </a>
   </div>
 </template>
+<script>
+export default {
+  props: ["title"]
+};
+</script>

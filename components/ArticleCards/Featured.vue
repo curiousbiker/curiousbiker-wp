@@ -1,25 +1,21 @@
 <template>
   <div class=" grid grid-cols-1 md:grid-cols-4 gap-10">
     <div class=" col-span-2 rounded-md overflow-hidden shadow-xl">
-      <img
-        src="https://i.picsum.photos/id/951/536/354.jpg?hmac=sNmKuSgwNYO49s2ozCXWOS-1i8dFuF8LACs1aMGCWlg"
-        alt=""
-        class=" w-full"
-      />
+      <img :src="thumbnail" :alt="article.title.rendered" class=" w-full" />
     </div>
     <div class="col-span-2 flex flex-col justify-center">
       <a class=" text-3xl block text-dark font-HindSiliguri font-bold">
-        করোনাভাইরাসের ৮০ শতাংশই ভারতীয় ভ্যারিয়েন্ট, বলছে আইইডিসিআর
+        {{ article.title.rendered }}
       </a>
 
-      <time class=" text-gray-500 text-xl my-6 block">২৫ মে ২০২১</time>
+      <time class=" text-gray-500 text-xl my-6 block">
+        {{ $moment(article.date).format("LLLL") }}
+      </time>
 
-      <div class="text-xl text-gray-700">
-        <p>
-          ক্যালিফোর্নিয়ার হঠাৎ করে বাড়ির পেছনে কুকুরের চিৎকার শুনে দেখতে এলো
-          ১৭ বছরের কিশোরী। ভালুকের সঙ্গে চিৎকার করছিল কুকুরগুলো।
-        </p>
-      </div>
+      <div
+        class="text-xl text-gray-700"
+        v-html="article.excerpt.rendered.slice(0, 120) + '...'"
+      ></div>
 
       <a
         href="#"
@@ -42,3 +38,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["article"],
+  computed: {
+    thumbnail() {
+      return this.article._embedded["wp:featuredmedia"][0].source_url;
+    }
+  }
+};
+</script>
