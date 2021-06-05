@@ -2,7 +2,9 @@
   <div class="wrapper">
     <div class="navbar">
       <nuxt-link to="/" class="navbar__logo">
-        Curious Biker
+        <a href="#">
+          <img src="~/static/logos/black150x40.png" alt="">
+        </a>
       </nuxt-link>
 
       <div class="navbar__search">
@@ -26,7 +28,7 @@
       </div>
       <div class="navbar__links flex space-x-4">
         <a href="#">আমাদের সম্পর্কে</a>
-        <a href="#">আমাদের সম্পর্কে</a>
+        <a href="#">যোগাযোগ</a>
       </div>
     </div>
   </div>

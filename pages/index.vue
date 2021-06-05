@@ -3,6 +3,7 @@
     <sections-featureds :resources="featureds" />
 
     <div class=" grid grid-cols-12 gap-10">
+
       <div class="col-span-8">
         <div class=" my-10">
           <sections-block-1 title="বাইকিং টিপস" :resources="category1" />
@@ -17,14 +18,13 @@
           <sections-block-2 title="মোটরবাইক যন্ত্রাংশ" :resources="category4" />
         </div>
       </div>
+
       <div class="col-span-4">
-        <h1 class="text-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-          eligendi eveniet natus odit facilis, ipsum voluptatum! Dolorum dicta
-          est, harum, ullam aliquid nam animi, nostrum similique sapiente quo
-          minima quibusdam.
-        </h1>
+        <HomeSideBar/>
       </div>
+    </div>
+    <div class="">
+      <FullWidthArticles/>
     </div>
   </div>
   <div v-else>

@@ -1,17 +1,19 @@
 <template>
-  <div class="wrapper grid grid-cols-12">
+  <div class="wrapper grid grid-cols-12 gap-10">
     <div class=" col-span-8">
-      <!-- <h1>{{ article }}</h1> -->
-      <!-- 
-      <time class=" text-gray-500 text-base block">
-        {{ $moment(article.date).format("LLLL") }}
-      </time> -->
-
-      <!-- <div class="col-span-2 rounded-md overflow-hidden shadow-xl">
-        <img :src="thumbnail" class=" w-full" />
-      </div> -->
+      <h1 class="mb-10 font-bold text-3xl leading-relaxed">ডোনাল্ড ট্রাম্প: দুই বছরের জন্য ফেসবুক ও ইন্সটাগ্রামে নিষিদ্ধ সাবেক মার্কিন প্রেসিডেন্ট</h1>
+      <a href="#">
+        <img class="rounded-md" src="https://res.cloudinary.com/curious-biker/image/upload/v1622643329/maxresdefault_1351e576b.jpg" alt="feature-image">
+      </a>
+      <p class=" text-xl my-10 leading-relaxed ">যুক্তরাষ্ট্রের সাবেক প্রেসিডেন্ট ডোনাল্ড ট্রাম্প ২০২৩ সাল পর্যন্ত ফেসবুক ও ইন্সটাগ্রাম একাউন্ট ব্যবহার করতে পারবেন না।</p>
     </div>
-    <div class=" col-span-4"></div>
+    <div class=" col-span-4">
+      <div>
+      
+        <SectionTitle title="সাম্প্রতিক পোস্ট"/>
+        <ArticleCards-Card-2/>
+      </div>
+    </div>
   </div>
 </template>
 
