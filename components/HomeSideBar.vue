@@ -9,9 +9,8 @@
         />
       </a>
     </div>
-    <div class="facebook mt-10 rounded-md overflow-hidden">
+    <!-- <div class="mt-10 overflow-hidden rounded-md facebook">
       <client-only>
-
         <iframe
           src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcuriousbiker&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
           width="340"
@@ -20,8 +19,8 @@
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
       </client-only>
-    </div>
-    <div class="join-group mt-10">
+    </div> -->
+    <div class="mt-10 join-group">
       <p>join group</p>
     </div>
   </div>

@@ -1,21 +1,33 @@
 <template>
   <div class="grid grid-cols-12 gap-10 wrapper">
-    <div class="col-span-8 ">
-      <h1 class="mb-10 text-3xl font-bold leading-relaxed">
-        ডোনাল্ড ট্রাম্প: দুই বছরের জন্য ফেসবুক ও ইন্সটাগ্রামে নিষিদ্ধ সাবেক
-        মার্কিন প্রেসিডেন্ট
-      </h1>
-      <a href="#">
-        <img
-          class="rounded-md"
-          src="https://res.cloudinary.com/curious-biker/image/upload/v1622643329/maxresdefault_1351e576b.jpg"
-          alt="feature-image"
+    <div class="col-span-8">
+      <template v-if="!$fetchState.pending">
+        <div>
+          <h1 class="mb-10 text-3xl font-bold leading-relaxed">
+            {{ article.title.rendered }}
+          </h1>
+          <img
+            class="rounded-md"
+            :src="thumbnail"
+            :alt="article.title.rendered"
+          />
+        </div>
+        <div
+          v-html="article.content.rendered"
+          class="mt-10 prose md:prose-xl"
         />
-      </a>
-      <p class="my-10 text-xl leading-relaxed ">
-        যুক্তরাষ্ট্রের সাবেক প্রেসিডেন্ট ডোনাল্ড ট্রাম্প ২০২৩ সাল পর্যন্ত ফেসবুক
-        ও ইন্সটাগ্রাম একাউন্ট ব্যবহার করতে পারবেন না।
-      </p>
+      </template>
+
+      <template v-else>
+        <div class="mb-4">
+          <PuSkeleton height="15px" />
+        </div>
+        <PuSkeleton height="300px" />
+
+        <div class="mt-4 ">
+          <PuSkeleton :count="30" />
+        </div>
+      </template>
     </div>
     <div class="col-span-4 ">
       <div>
@@ -31,17 +43,17 @@ export default {
     return {
       article: null
     };
+  },
+  async fetch() {
+    const [article] = await this.$axios.$get(
+      `posts?slug=${this.$route.params.slug}&_embed`
+    );
+    this.article = article;
+  },
+  computed: {
+    thumbnail() {
+      return this.article._embedded["wp:featuredmedia"][0].source_url;
+    }
   }
-  //   async fetch() {
-  //     const [article] = await this.$axios.$get(
-  //       `posts?slug=${this.$route.params.slug}&_embed`
-  //     );
-  //     this.article = article;
-  //   },
-  //   computed: {
-  //     thumbnail() {
-  //       return this.article._embedded["wp:featuredmedia"][0].source_url;
-  //     }
-  //   }
 };
 </script>

@@ -1,17 +1,19 @@
 <template>
-  <div class=" grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div class=" col-span-2 rounded-md overflow-hidden shadow-xl">
-      <img :src="thumbnail" :alt="article.title.rendered" class=" w-full" />
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-4">
+    <div class="col-span-2 overflow-hidden rounded-md shadow-xl ">
+      <nuxt-link :to="article.slug">
+        <img :src="thumbnail" :alt="article.title.rendered" class="w-full " />
+      </nuxt-link>
     </div>
-    <div class="col-span-2 flex flex-col justify-center">
+    <div class="flex flex-col justify-center col-span-2">
       <nuxt-link
         :to="article.slug"
-        class=" text-3xl block text-dark font-HindSiliguri font-bold"
+        class="block text-3xl font-bold text-dark font-HindSiliguri"
       >
         {{ article.title.rendered }}
       </nuxt-link>
 
-      <time class=" text-gray-500 text-xl my-6 block">
+      <time class="block my-6 text-xl text-gray-500 ">
         {{ $moment(article.date).format("LLLL") }}
       </time>
 
@@ -22,12 +24,12 @@
 
       <nuxt-link
         :to="article.slug"
-        class=" mt-10 text-primary items-center text-xl flex space-x-3"
+        class="flex items-center mt-10 space-x-3 text-xl text-primary"
       >
         <span>বিস্তারিত পড়ুন</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
+          class="w-5 h-5"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
