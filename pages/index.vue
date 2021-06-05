@@ -1,28 +1,28 @@
 <template>
   <div class="wrapper" v-if="!$fetchState.pending">
-    <sections-featureds :resources="featureds" />
+    <sections-featureds :resources="featureds"/>
 
     <div class="grid grid-cols-12 gap-10 ">
       <div class="col-span-8">
         <div class="my-10 ">
-          <sections-block-1 title="বাইকিং টিপস" :resources="category1" />
+          <sections-block-1 title="বাইকিং টিপস" :resources="category1"/>
         </div>
 
         <div class="my-10 ">
-          <sections-block-1 title="টেকনিক্যাল বিষয়" :resources="category2" />
+          <sections-block-1 title="টেকনিক্যাল বিষয়" :resources="category2"/>
         </div>
 
         <div class="grid grid-cols-2 gap-10 ">
-          <sections-block-2 title="বাইকিং নিউজ" :resources="category3" />
-          <sections-block-2 title="মোটরবাইক যন্ত্রাংশ" :resources="category4" />
+          <sections-block-2 title="বাইকিং নিউজ" :resources="category3"/>
+          <sections-block-2 title="মোটরবাইক যন্ত্রাংশ" :resources="category4"/>
         </div>
       </div>
       <div class="col-span-4">
-        <HomeSideBar />
+        <HomeSideBar/>
       </div>
     </div>
     <div class="">
-      <FullWidthArticles />
+      <FullWidthArticles/>
     </div>
   </div>
   <div v-else>

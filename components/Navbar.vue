@@ -2,9 +2,9 @@
   <div class="wrapper">
     <div class="navbar">
       <nuxt-link to="/" class="navbar__logo">
-        <a href="#">
-          <img src="~/static/logos/black150x40.png" alt="">
-        </a>
+
+        <img src="~/static/logos/black150x40.png" alt="">
+
       </nuxt-link>
 
       <div class="navbar__search">
@@ -46,6 +46,7 @@ export default {};
     &--input {
       @apply border px-4 py-2 rounded w-full border-none bg-gray-100;
     }
+
     &--icon {
       @apply h-5 w-5 absolute top-2 right-2 text-gray-600;
     }

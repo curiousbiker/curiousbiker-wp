@@ -1,12 +1,13 @@
 <template>
   <div class="">
-    <ArticleCards-Featured :article="firstArticle" />
+    <ArticleCards-Featured :article="firstArticle"/>
     <div class=" grid grid-cols-4 gap-10 my-10">
-      <ArticleCards-Card-1
-        v-for="article in othersArticle"
-        :key="article.id"
-        :article="article"
-      />
+      <template v-for="article in othersArticle">
+        <ArticleCards-Card-1
+          :key="article.id"
+          :article="article"
+        />
+      </template>
     </div>
   </div>
 </template>

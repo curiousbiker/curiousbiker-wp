@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Navbar />
+    <navbar/>
     <main class="my-16">
-      <Nuxt />
+      <Nuxt/>
     </main>
-    <Footer />
+    <Footer/>
   </div>
 </template>
+
